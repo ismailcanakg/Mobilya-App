@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject var cartManager = CardManager()
+    @StateObject var cardManager = CardManager()
     @State var currentTab: Tab = .Home
     
     init() {
@@ -20,27 +20,26 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $currentTab) {
-            Text("Home View")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-                .tag(Tab.Home)
             
-            Text("Search View")
+            HomePageView()
+                .environmentObject(cardManager)
+            
+            Text("Ara")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
                 .tag(Tab.Search)
             
-            Text("Notification View")
+            Text("Bildirim")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
                 .tag(Tab.Notification)
             
-            Text("Cart View")
+            Text("Kart")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
                 .tag(Tab.Cart)
             
-            Text("Profile View")
+            Text("Profil")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
                 .tag(Tab.Profile)

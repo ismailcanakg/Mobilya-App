@@ -15,7 +15,7 @@ struct SearchView: View {
                 Image(systemName: "magnifyingglass")
                     .padding(.leading)
                 
-                TextField("Search For Furniture", text: $search)
+                TextField("Ürün Ara", text: $search)
                     .padding()
             }
             .background(Color("kSecondary"))

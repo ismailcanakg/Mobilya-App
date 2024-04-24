@@ -18,11 +18,12 @@ struct ProductCardView: View {
                 VStack(alignment: .leading) {
                     Image(product.image)
                         .resizable()
-                        .frame(width: 175, height: 160)
+                        .frame(width: 125, height: 115)
                         .cornerRadius(12)
                     
                     Text(product.name)
                         .font(.headline)
+                        .foregroundColor(.black)
                         .padding(.vertical, 1)
                     
                     Text(product.supplier)
@@ -31,6 +32,7 @@ struct ProductCardView: View {
                         .padding(.vertical, 0.5)
                     
                     Text("$ \(product.price)")
+                        .foregroundColor(.black)
                         .bold()
                 }
                     Button{
@@ -39,12 +41,12 @@ struct ProductCardView: View {
                         Image(systemName: "plus.circle.fill")
                             .resizable()
                             .foregroundColor(Color("kPrimary"))
-                            .frame(width: 35, height: 35)
+                            .frame(width: 25, height: 25)
                             .padding(.trailing)
                     }
             }
         }
-        .frame(width: 185, height: 260)
+        .frame(width: 135, height: 210)
         .cornerRadius(15)
     }
 }
